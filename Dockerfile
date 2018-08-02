@@ -14,7 +14,7 @@ WORKDIR ..
 RUN curl -LO https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.1.1.tar.gz
 RUN tar xzf libvoikko-4.1.1.tar.gz
 WORKDIR libvoikko-4.1.1
-RUN ./configure -disable-hfst --enable-static --disable-shared && \
+RUN ./configure -disable-hfst --enable-static --disable-shared CXXFLAGS='-g0' && \
     make && make install
 WORKDIR ..
 
