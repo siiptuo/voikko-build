@@ -9,7 +9,7 @@ before_deploy:
   - tar zcf voikkospell.tar.gz voikkospell
 deploy:
   provider: releases
-  api_key: $GITHUB TOKEN
+  api_key: $GITHUB_TOKEN
   file: voikkospell.tar.gz
   skip_cleanup: true
   on:
