@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+script:
+  - mkdir voikkospell
+  - docker build . -t voikkospell
+  - docker run -v $PWD/voikkospell:/out voikkospell
+  - tar zcf voikkospell.tar.gz voikkospell
